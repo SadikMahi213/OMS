@@ -49,11 +49,20 @@ export default function LoginPage() {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="relative w-full max-w-md mx-4"
-    >
+    <>
+      <div aria-hidden="true" className="fixed inset-0 z-0">
+        <img
+          src="/login.jpeg"
+          alt=""
+          className="h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gray-950/70" />
+      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="relative z-10 w-full max-w-md mx-4"
+      >
       <div className="rounded-2xl border border-white/10 bg-gray-900/80 backdrop-blur-2xl p-8 shadow-2xl">
         <div className="flex flex-col items-center mb-8">
           <img
@@ -155,5 +164,6 @@ export default function LoginPage() {
         </p>
       </div>
     </motion.div>
+    </>
   )
 }
