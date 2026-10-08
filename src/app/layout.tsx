@@ -16,6 +16,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "OMS Dashboard — Order Management System",
   description: "Enterprise-grade realtime order management system",
+  icons: {
+    icon: "/compact-svg.svg",
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

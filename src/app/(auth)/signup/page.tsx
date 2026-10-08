@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { motion } from "framer-motion"
-import { Zap, User, Mail, Lock } from "lucide-react"
+import { Mail, Lock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -30,9 +30,11 @@ export default function SignupPage() {
     >
       <div className="rounded-2xl border border-white/10 bg-gray-900/80 backdrop-blur-2xl p-8 shadow-2xl">
         <div className="flex flex-col items-center mb-8">
-          <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg mb-4">
-            <Zap className="h-6 w-6 text-white" />
-          </div>
+          <img
+            src="/compact-svg.svg"
+            alt="OMS"
+            className="w-12 h-12 rounded-xl shadow-lg mb-4"
+          />
           <h1 className="text-2xl font-bold text-white">Create account</h1>
           <p className="text-sm text-gray-400 mt-1">Start your OMS journey</p>
         </div>

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import {
   LayoutDashboard, ShoppingCart, Users, BarChart3, UserCircle,
-  Activity, Settings, ChevronLeft, ChevronRight, Zap
+  Activity, Settings, ChevronLeft, ChevronRight
 } from "lucide-react"
 import { cn } from "@/lib/utils/cn"
 import { useAppStore } from "@/lib/store/app-store"
@@ -36,9 +36,11 @@ export function Sidebar() {
       <div className={cn("flex items-center h-16 px-4 border-b border-white/[0.06]", sidebarCollapsed ? "justify-center" : "justify-between")}>
         {!sidebarCollapsed && (
           <Link href="/overview" className="flex items-center gap-2.5">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg">
-              <Zap className="h-4 w-4 text-white" />
-            </div>
+            <img
+              src="/compact-svg.svg"
+              alt="OMS"
+              className="w-8 h-8 rounded-lg shadow-lg shrink-0"
+            />
             <div>
               <span className="text-sm font-bold text-white">OMS</span>
               <span className="text-[10px] block text-gray-500 -mt-0.5">Dashboard</span>
@@ -47,9 +49,11 @@ export function Sidebar() {
         )}
         {sidebarCollapsed && (
           <Link href="/overview">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg">
-              <Zap className="h-4 w-4 text-white" />
-            </div>
+            <img
+              src="/compact-svg.svg"
+              alt="OMS"
+              className="w-8 h-8 rounded-lg shadow-lg shrink-0"
+            />
           </Link>
         )}
       </div>
