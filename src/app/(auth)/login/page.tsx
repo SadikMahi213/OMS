@@ -63,14 +63,17 @@ export default function LoginPage() {
         animate={{ opacity: 1, y: 0 }}
         className="relative z-10 w-full max-w-md mx-4"
       >
-      <div className="rounded-2xl border border-white/10 bg-gray-900/80 backdrop-blur-2xl p-8 shadow-2xl">
+      <div
+        className="rounded-[20px] border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.07)] p-8 shadow-[inset_0_1px_0_rgba(255,255,255,0.07),0_24px_64px_rgba(0,0,0,0.55)] backdrop-blur-[20px]"
+        style={{ WebkitBackdropFilter: "blur(20px)", backdropFilter: "blur(20px)" }}
+      >
         <div className="flex flex-col items-center mb-8">
           <img
             src="/compact-svg.svg"
             alt="OMS"
             className="w-12 h-12 rounded-xl shadow-lg mb-4"
           />
-          <h1 className="text-2xl font-bold text-white">Welcome back</h1>
+          <h1 className="text-2xl font-bold tracking-tight text-white">Welcome back</h1>
           <p className="text-sm text-gray-400 mt-1">Sign in to your OMS dashboard</p>
         </div>
 
@@ -85,7 +88,7 @@ export default function LoginPage() {
                 placeholder="alice@oms-demo.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="pl-10"
+                className="pl-10 bg-[rgba(0,0,0,0.3)] border-[rgba(255,255,255,0.10)] placeholder:text-gray-500 focus:border-indigo-500/70 focus:ring-1 focus:ring-indigo-500/30"
               />
             </div>
           </div>
@@ -100,7 +103,7 @@ export default function LoginPage() {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="pl-10"
+                className="pl-10 bg-[rgba(0,0,0,0.3)] border-[rgba(255,255,255,0.10)] placeholder:text-gray-500 focus:border-indigo-500/70 focus:ring-1 focus:ring-indigo-500/30"
               />
               <button
                 type="button"
@@ -118,7 +121,7 @@ export default function LoginPage() {
             </motion.p>
           )}
 
-          <Button type="submit" className="w-full h-11" disabled={loading}>
+          <Button type="submit" className="w-full h-11 rounded-[12px] font-semibold shadow-none" disabled={loading}>
             {loading ? "Signing in..." : "Sign in"}
           </Button>
         </form>
@@ -129,27 +132,27 @@ export default function LoginPage() {
           </Link>
         </div>
 
-        <div className="mt-6 p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+        <div className="mt-6 p-4 rounded-2xl bg-[rgba(0,0,0,0.25)] border border-[rgba(255,255,255,0.10)]">
           <p className="text-xs font-medium text-gray-400 mb-3 text-center">Demo Quick Login</p>
           <div className="flex gap-2">
             <button
               onClick={() => quickLogin("admin")}
               disabled={loading}
-              className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20 hover:bg-rose-500/20 transition-colors"
+              className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-white/[0.05] text-gray-200 border border-white/10 hover:bg-white/[0.09] transition-colors disabled:opacity-50"
             >
               Admin
             </button>
             <button
               onClick={() => quickLogin("manager")}
               disabled={loading}
-              className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 hover:bg-blue-500/20 transition-colors"
+              className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-white/[0.05] text-gray-200 border border-white/10 hover:bg-white/[0.09] transition-colors disabled:opacity-50"
             >
               Manager
             </button>
             <button
               onClick={() => quickLogin("staff")}
               disabled={loading}
-              className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20 hover:bg-gray-500/20 transition-colors"
+              className="flex-1 px-3 py-2 rounded-lg text-xs font-medium bg-white/[0.05] text-gray-200 border border-white/10 hover:bg-white/[0.09] transition-colors disabled:opacity-50"
             >
               Staff
             </button>
